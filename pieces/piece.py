@@ -18,7 +18,7 @@ class Piece:
         return self.piece_type + self.color
 
     """ This method raises a exception if the destination coordinates are out of the board"""
-    def _on_board(self, from_x, from_y, to_x, to_y):
+    def on_board(self, from_x, from_y, to_x, to_y):
         if (to_x < 0) or (to_x >= BOARD_SIZE):
             raise Exception ("Invalid coordinates. The board size is 9x9. ")
         if (to_y < 0) or (to_y >= BOARD_SIZE):

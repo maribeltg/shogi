@@ -9,12 +9,19 @@ class Pawn(Piece):
     """ Object constructor """
     def __init__(self, color):
         super().__init__(color)
-#        self.piece_type = piece_type
 
     """ A pawn (P) moves one square straight forward. It cannot retreat. """
-    def _correct_move(self, from_x, from_y, to_x, to_y):
-        if ((from_x + 1) == to_x) and (from_y == to_y):
-            return True
+    def correct_move(self, from_x, from_y, to_x, to_y):
+        print("estoy en moviento correcto pawn")
+        print(self.color)
+        if (self.color == "v"):
+            if ((from_x + 1) == to_x) and (from_y == to_y):
+                return True
+            else:
+                return False
         else:
-            return False
+            if ((from_x - 1) == to_x) and (from_y == to_y):
+                return True
+            else:
+                return False
 

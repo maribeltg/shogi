@@ -7,13 +7,14 @@ class Player:
     player2 = "White"
     winner_player = None
     current_player = None
+    captured = []
 
     """ Object constructor """
     def __init__(self):
         self.current_player = self.player1
 
     """ Switches the turn """
-    def _change_turn(self):
+    def change_turn(self):
         print(self.current_player)
         if self.current_player == self.player1:
             self.current_player = self.player2
@@ -28,17 +29,20 @@ class Player:
     def winner_found(self):
         return self.winner_player
 
-    """ Dado un jugador, lo pone como ganador """
-    def _set_winner(self, winner):
-        self.winner_player = winner
+    #""" Dado un jugador, lo pone como ganador """
+    #def set_winner(self, winner):
+    #    self.winner_player = winner
 
-    """ Devuelve el jugador ganador """
-    def _get_ganador(self):
-        return self.winner_player
+    #""" Devuelve el jugador ganador """
+    #def get_winner(self):
+    #    return self.winner_player
 
-    """ Turno inicial """
-    def _set_new_game(self):
-        self.current_player = self.player1
-        self.winner_player = None
+    #""" Turno inicial """
+    #def _set_new_game(self):
+    #    self.current_player = self.player1
+    #    self.winner_player = None
 
+    """ Return the number of captured pieces """
+    def get_captured(self):
+        return len(self.captured)
 

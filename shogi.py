@@ -15,8 +15,10 @@ class Main:
         board = Board()
 
         #Drawing the board and the turn on the console
-        DrawBoard._draw_board(board)
-        DrawBoard._draw_turn(player)
+        DrawBoard.draw_board(board)
+        DrawBoard.draw_turn(player)
+        DrawBoard.draw_captured(player)
+
 
         #Get the coordinates from the user
         from_x_y = input("From (row col):")
@@ -26,16 +28,23 @@ class Main:
 
         #Get the selected piece
         selected_piece = board.state[int(from_list[0])][int(from_list[1])]
+        selected_target = board.state[int(to_list[0])][int(to_list[1])]
 
+        #TODO si no coincide el color de la pieza con el turno, lanzar excepcion
         # If the target position (to_x_y) is on the board, we check if the selected piece can make the move
         if selected_piece._on_board(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1])):
             # Then the board is updated and the turn is changed
-            if (selected_piece._correct_move(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1]))):
+            if (selected_piece.correct_move(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1]))):
+                #if to_x_y has a piece and the color is the opponent's color, the piece is captured
+                if (selected_target) and (selected_target.color != selected_piece.color):
+                    player.captured.append(selected_target)
+                    print(player.captured)
                 board.state[int(from_list[0])][int(from_list[1])] = None
                 board.state[int(to_list[0])][int(to_list[1])] = selected_piece
-                player._change_turn()
-                DrawBoard._draw_board(board)
-                DrawBoard._draw_turn(player)
+                player.change_turn()
+                DrawBoard.draw_board(board)
+                DrawBoard.draw_turn(player)
+                DrawBoard.draw_captured(player)
     
 if __name__ == "__main__":
     main = Main()

@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from pieces.pawn import Pawn
+from pieces.lance import Lance
+from pieces.knight import Knight
+from pieces.silver import Silver
+from pieces.gold import Gold
+from pieces.king import King
+from pieces.rook import Rook
+from pieces.bishop import Bishop
 
 # This class represent the board of the game
 class Board:
@@ -14,15 +21,15 @@ class Board:
     """ Object constructor """
     def __init__(self):
         self.state = [
-            [Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v")],
-            [None,Pawn("v"),None,None,None,None,None,Pawn("v"),None],
+            [Lance("v"),Knight("v"),Silver("v"),Gold("v"),King("v"),Gold("v"),Silver("v"),Knight("v"),Lance("v")],
+            [None,Rook("v"),None,None,None,None,None,Bishop("v"),None],
             [Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v"),Pawn("v")],
             [None,None,None,None,None,None,None,None,None],
             [None,None,None,None,None,None,None,None,None],
             [None,None,None,None,None,None,None,None,None],
             [Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^")],
-            [None,Pawn("^"),None,None,None,None,None,Pawn("^"),None],
-            [Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^"),Pawn("^")],
+            [None,Bishop("^"),None,None,None,None,None,Rook("^"),None],
+            [Lance("^"),Knight("^"),Silver("^"),Gold("^"),King("^"),Gold("^"),Silver("^"),Knight("^"),Lance("^")],
         ]
 
 

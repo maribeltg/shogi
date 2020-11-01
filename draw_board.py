@@ -5,7 +5,7 @@
 class DrawBoard:    
     """ Draw the current state of the board on the console. """
     @staticmethod
-    def _draw_board(board):
+    def draw_board(board):
         print ("    0  1  2  3  4  5  6  7  8")
         print ("+------------------------------+")
 
@@ -20,7 +20,13 @@ class DrawBoard:
 
     """ Draw the current player on the console. """
     @staticmethod
-    def _draw_turn (player):
+    def draw_turn (player):
         turn = player.current_player
         print ("TURN",turn)
+
+    """ Draw the player's number of captured pieces on the console. """
+    @staticmethod
+    def draw_captured (player):
+        captured = player.get_captured()
+        print ("Captured",captured)   
 
