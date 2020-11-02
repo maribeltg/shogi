@@ -12,7 +12,13 @@ class Lance(Piece):
 
     """ A lance (L) moves one or more squares straight forward. It cannot moves backwards or to the side.  """
     def correct_move(self, from_x, from_y, to_x, to_y):
-        if (from_x < to_x) and (from_y == to_y):
-            return True
+        if (self.color == "v"):
+            if (from_x < to_x) and (from_y == to_y):
+                return True
+            else:
+                return False
         else:
-            return False
+            if (from_x > to_x) and (from_y == to_y):
+                return True
+            else:
+                return False

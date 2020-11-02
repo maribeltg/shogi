@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#from sogui_constants import BOARD_SIZE
-#from pawn import Pawn
-BOARD_SIZE = 9
+from shogi_constants import BOARD_SIZE
 
 # This class represent one piece of the game
 class Piece:

@@ -5,7 +5,7 @@
 class Player:
     player1 = "Black"
     player2 = "White"
-    winner_player = None
+    winner_player = False
     current_player = None
     captured = []
 
@@ -28,19 +28,6 @@ class Player:
     """ Returns winner """
     def winner_found(self):
         return self.winner_player
-
-    #""" Dado un jugador, lo pone como ganador """
-    #def set_winner(self, winner):
-    #    self.winner_player = winner
-
-    #""" Devuelve el jugador ganador """
-    #def get_winner(self):
-    #    return self.winner_player
-
-    #""" Turno inicial """
-    #def _set_new_game(self):
-    #    self.current_player = self.player1
-    #    self.winner_player = None
 
     """ Return the number of captured pieces """
     def get_captured(self):

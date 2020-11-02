@@ -12,8 +12,7 @@ class Bishop(Piece):
 
     """ A bishop (B) moves any number of squares in a diagonal direction """
     def correct_move(self, from_x, from_y, to_x, to_y):
-        #TODO
-        if ((from_x + 1) == to_x) and (from_y == to_y):
+        if (abs(from_x - to_x) == abs(from_y - to_y)):
             return True
         else:
             return False

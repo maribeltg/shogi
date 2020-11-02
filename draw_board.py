@@ -10,7 +10,7 @@ class DrawBoard:
         print ("+------------------------------+")
 
         for row_index, row in enumerate(board.state):
-            print (row_index,"|", end=' ')
+            print(row_index,"|", end=' ')
             for elem in row:
                 if elem != None:
                     print (elem, end=' ')

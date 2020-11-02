@@ -12,8 +12,6 @@ class Pawn(Piece):
 
     """ A pawn (P) moves one square straight forward. It cannot retreat. """
     def correct_move(self, from_x, from_y, to_x, to_y):
-        print("estoy en moviento correcto pawn")
-        print(self.color)
         if (self.color == "v"):
             if ((from_x + 1) == to_x) and (from_y == to_y):
                 return True
