@@ -8,7 +8,7 @@ class Player:
     player2 = PLAYER_2
     winner_player = False
     current_player = None
-    captured = []
+    captured = {PLAYER_1 : [], PLAYER_2 : []}
 
     """ Object constructor """
     def __init__(self):
@@ -30,7 +30,10 @@ class Player:
     def winner_found(self):
         return self.winner_player
 
-    """ Return the number of captured pieces """
+    """ Return the list of captured pieces """
     def get_captured(self):
-        return len(self.captured)
+        return self.captured[self.current_player]
+
+    def set_captured(self, piece):
+        self.captured[self.current_player].append(piece)
 

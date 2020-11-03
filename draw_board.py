@@ -29,5 +29,7 @@ class DrawBoard:
     @staticmethod
     def draw_captured (player):
         captured = player.get_captured()
-        print ("Captured",captured)   
+        print ("Captured pieces",len(captured))  
+        print (captured)
+         
 
