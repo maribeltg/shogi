@@ -20,6 +20,6 @@ class Piece:
         if (to_x < 0) or (to_x >= BOARD_SIZE):
             raise Exception ("Invalid coordinates. The board size is 9x9. ")
         if (to_y < 0) or (to_y >= BOARD_SIZE):
-            raise Exception ("Invalid coordinates. Tha board size is 9x9. ")
+            raise Exception ("Invalid coordinates. The board size is 9x9. ")
         else:
             return True

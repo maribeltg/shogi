@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from shogi_constants import TURN
 
 # This class show the state of the game on the console
 class DrawBoard:    
@@ -22,7 +23,7 @@ class DrawBoard:
     @staticmethod
     def draw_turn (player):
         turn = player.current_player
-        print ("TURN",turn)
+        print ("TURN",TURN[turn])
 
     """ Draw the player's number of captured pieces on the console. """
     @staticmethod

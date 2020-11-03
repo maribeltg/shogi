@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from shogi_constants import PLAYER_1, PLAYER_2
 
 # This class represent a player in the game
 class Player:
-    player1 = "Black"
-    player2 = "White"
+    player1 = PLAYER_1
+    player2 = PLAYER_2
     winner_player = False
     current_player = None
     captured = []

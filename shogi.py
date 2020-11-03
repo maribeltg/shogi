@@ -31,18 +31,23 @@ class Main:
             selected_target = board.state[int(to_list[0])][int(to_list[1])]
 
             #TODO si no coincide el color de la pieza con el turno, lanzar excepcion
-            # If the target position (to_x_y) is on the board, we check if the selected piece can make the move
-            if selected_piece.on_board(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1])):
-                # Then the board is updated and the turn is changed
-                if (selected_piece.correct_move(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1]))):
-                    #if to_x_y has a piece and the color is the opponent's color, the piece is captured
-                    if (selected_target) and (selected_target.color != selected_piece.color):
-                        player.captured.append(selected_target)
-                        print(player.captured)
-                    board.state[int(from_list[0])][int(from_list[1])] = None
-                    board.state[int(to_list[0])][int(to_list[1])] = selected_piece
-                    player.change_turn()
+            if (selected_piece.color == player.current_player):
+                # If the target position (to_x_y) is on the board, we check if the selected piece can make the move
+                if selected_piece.on_board(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1])):
+                    # Then the board is updated and the turn is changed
+                    if (selected_piece.correct_move(int(from_list[0]), int(from_list[1]), int(to_list[0]), int(to_list[1]))):
+                        #if to_x_y has a piece and the color is the opponent's color, the piece is captured
+                        if (selected_target) and (selected_target.color != selected_piece.color):
+                            player.captured.append(selected_target)
+                            print(player.captured)
+                        board.state[int(from_list[0])][int(from_list[1])] = None
+                        board.state[int(to_list[0])][int(to_list[1])] = selected_piece
+                        player.change_turn()
     
+            else:
+                raise Exception ("Incorrect piece. Please, select a piece of your color. ")
+
+            
 if __name__ == "__main__":
     main = Main()
 
