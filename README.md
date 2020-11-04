@@ -18,6 +18,7 @@ To execute the tests (/tests):
 $ python3 -m venv myvenv
 $ source myvenv/bin/activate
 $ python -m pip install pytest
+$ cd tests/
 $ PYTHONPATH=../ pytest
 
 ```
